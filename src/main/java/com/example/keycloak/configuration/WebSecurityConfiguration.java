@@ -1,4 +1,4 @@
-package com.example.keycloak;
+package com.example.keycloak.configuration;
 
 import com.nimbusds.jose.shaded.json.JSONArray;
 import org.springframework.context.annotation.Bean;
