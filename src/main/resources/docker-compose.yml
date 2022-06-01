@@ -1,7 +1,17 @@
 version: "3.8"
 
 services:
-
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2236
+    ports:
+      - '5433:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
   postgres:
     container_name: postgres
     image: library/postgres
@@ -30,3 +40,6 @@ services:
       - postgres
     links:
       - "postgres:postgres"
+volumes:
+  db:
+    driver: local
